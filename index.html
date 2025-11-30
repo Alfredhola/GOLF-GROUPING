@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-TW"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;RG Golf Pairing V15&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--primary: #1B5E20;<span class="Apple-converted-space">      </span>/* Golf Green */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--primary-light: #E8F5E9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--secondary: #002D56;<span class="Apple-converted-space">    </span>/* Navy */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--accent: #F9A825; <span class="Apple-converted-space">      </span>/* Gold/Sand */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--bg: #F4F6F8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--white: #FFFFFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text: #37474F;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text-light: #90A4AE;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--male-color: #0277BD; <span class="Apple-converted-space">  </span>/* Blue for Men */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--female-color: #C2185B; /* Rose for Women */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--shadow: 0 4px 12px rgba(0,0,0,0.06);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--bg); color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>-webkit-font-smoothing: antialiased;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Header --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: var(--white);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header h1 { margin: 0; font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header .badge { font-size: 10px; background: var(--primary-light); color: var(--primary); padding: 3px 8px; border-radius: 20px; font-weight: bold; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.container { max-width: 600px; margin: 0 auto; padding: 15px; width: 100%; box-sizing: border-box; flex: 1; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Stepper --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.step-indicator {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex; margin-bottom: 20px; background: var(--white);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 50px; padding: 5px; box-shadow: var(--shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.step {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>flex: 1; text-align: center; padding: 10px; font-size: 13px; font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-light); cursor: pointer; border-radius: 40px; transition: 0.3s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.step.active { background-color: var(--primary); color: white; box-shadow: 0 2px 5px rgba(27,94,32,0.3); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Cards &amp; Inputs --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: var(--white); padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: var(--radius); box-shadow: var(--shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-bottom: 20px; animation: fadeIn 0.3s ease-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h2 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0 0 15px 0; font-size: 16px; font-weight: 700; color: var(--secondary);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex; align-items: center; gap: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h2::before { content: ''; display: block; width: 4px; height: 16px; background: var(--accent); border-radius: 2px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>textarea {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 100%; height: 160px; padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: 2px solid #EEE; border-radius: var(--radius); background: #FAFAFA;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: monospace; font-size: 15px; resize: none; box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: 0.2s; outline: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>textarea:focus { border-color: var(--primary); background: #FFF; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Buttons --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 14px; border: none; border-radius: var(--radius);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 15px; font-weight: 700; cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex; align-items: center; justify-content: center; gap: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 100%; box-sizing: border-box; margin-top: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn:active { transform: scale(0.98); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn-primary { background-color: var(--primary); color: white; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn-secondary { background-color: var(--secondary); color: white; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn-outline { background: white; border: 1px solid #DDD; color: var(--text); box-shadow: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn-green { background: #2E7D32; color: white; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn:disabled { background-color: #E0E0E0; color: #9E9E9E; cursor: not-allowed; box-shadow: none; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- List Item (Step 2) --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.assign-list { display: flex; flex-direction: column; gap: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.assign-item {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex; align-items: center; justify-content: space-between;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 10px; background: #FFF; border: 1px solid #EEE; border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.assign-item:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.name-edit {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: none; background: transparent; font-weight: 600; color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 15px; width: 100%; padding: 5px 0; margin-left: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.name-edit:focus { outline: none; border-bottom: 2px solid var(--accent); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hcp-input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 45px; padding: 6px; border: 1px solid #DDD; border-radius: 6px;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-align: center; font-weight: bold; color: var(--secondary); font-size: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.gender-toggle {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 50%; cursor: pointer; border: 1px solid #EEE; font-size: 14px; flex-shrink: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.gender-toggle.female { background: #FCE4EC; color: var(--female-color); border-color: #F8BBD0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.gender-toggle.male { background: #E3F2FD; color: var(--male-color); border-color: #BBDEFB; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn-del {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: none; border: none; color: #E57373; font-size: 18px;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer; margin-left: 10px; padding: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Scorecard (Step 3) --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.scorecard {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: white; border-radius: var(--radius); overflow: hidden; margin-bottom: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: 0 2px 8px rgba(0,0,0,0.08);<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-left: 6px solid var(--primary);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.scorecard.invalid { border-left-color: #E53935; background: #FFEBEE; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.scorecard-header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 10px 15px; background: #FFF; display: flex; justify-content: space-between; align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-bottom: 1px solid #F0F0F0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.group-info { display: flex; align-items: baseline; gap: 8px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.group-title { font-weight: 800; color: var(--secondary); font-size: 14px; text-transform: uppercase; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.group-stats { font-size: 11px; color: #888; background: #F5F5F5; padding: 2px 6px; border-radius: 4px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>table { width: 100%; border-collapse: collapse; font-size: 14px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>td { padding: 8px 15px; border-bottom: 1px solid #FAFAFA; vertical-align: middle; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tr:last-child td { border-bottom: none; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.p-name { font-weight: 600; font-size: 15px; display: block; margin-bottom: 2px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.p-name.male { color: var(--male-color); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.p-name.female { color: var(--female-color); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.move-select {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 2px 6px; border: 1px solid #EEE; border-radius: 4px; background: #FFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #999; font-size: 11px; margin-top: 2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Order Arrows */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.order-actions { display: flex; gap: 2px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.arrow-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: transparent; border: 1px solid #EEE; border-radius: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer; color: #78909C; transition: 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.arrow-btn:hover { background: #ECEFF1; color: var(--secondary); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Toast Notification */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#toast {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>visibility: hidden; min-width: 250px; background-color: #333; color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-align: center; border-radius: 8px; padding: 12px; position: fixed;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>z-index: 999; left: 50%; bottom: 30px; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#toast.show { visibility: visible; opacity: 1; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hidden { display: none !important; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.info-text { font-size: 12px; color: #78909C; line-height: 1.5; margin-bottom: 10px; }</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="display:flex; align-items:center; gap:8px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;RG PAIRING&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="badge"&gt;V15&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="container"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="step-indicator"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step active" id="tab-1" onclick="goToStep(1)"&gt;1. 輸入&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step" id="tab-2" onclick="goToStep(2)"&gt;2. 編輯&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step" id="tab-3"&gt;3. 結果&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- STEP 1: Input --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="view-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;名單輸入&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="info-text"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>• 系統將自動把「中文姓名」排在前面&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>• 支援符號、英文、中英混和&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>• 格式：姓名 HCP (一行一人)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;textarea id="input-text" placeholder="格式範例：&amp;#10;Jason 林 12&amp;#10;王大明 18&amp;#10;Vikki 👑 24"&gt;&lt;/textarea&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-primary" onclick="processInput()"&gt;下一步：解析名單 ➔&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex; gap:10px; justify-content:center;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>&lt;button class="btn btn-outline" style="width:auto; padding:8px 20px;" onclick="loadDemoData()"&gt;載入範例 (明星版)&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>&lt;button class="btn btn-outline" style="width:auto; padding:8px 20px;" onclick="clearInput()"&gt;清空&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- STEP 2: Configure &amp; Edit --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="view-2" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2&gt;編輯與設定&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="player-count-info" style="font-size:12px; font-weight:bold; color:var(--primary);"&gt;&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Quick Add --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex; gap:8px; margin-bottom:15px; background:#F1F8E9; padding:8px; border-radius:8px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input id="new-name" class="name-edit" style="margin:0; background:white; padding:8px; border-radius:4px;" placeholder="新增姓名..."&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input id="new-hcp" type="number" class="hcp-input" style="width:50px; background:white;" placeholder="HCP"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="btn-primary" style="width:40px; margin:0;" onclick="manualAddPlayer()"&gt;+&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="assign-list" id="player-list"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="margin-top:20px; border-top:1px solid #EEE; padding-top:20px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase;"&gt;HCP 策略&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;select id="hcp-logic" style="width:100%; padding:8px; border-radius:6px; border:1px solid #DDD; margin-top:4px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="total_balanced" selected&gt;⚖️ 總和平均&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="competitive"&gt;⚔️ 實力相近&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase;"&gt;性別分配&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;select id="gender-logic" style="width:100%; padding:8px; border-radius:6px; border:1px solid #DDD; margin-top:4px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="balanced" selected&gt;👫 平均混編&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="random"&gt;🎲 隨機分配&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" onclick="generateResult()"&gt;開始分組 ⛳&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- STEP 3: Results --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="view-3" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="margin-bottom:15px; display:flex; gap:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-outline" style="margin:0; flex:1;" onclick="goToStep(1)"&gt;↺ 重來&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button id="btn-export" class="btn btn-green" style="margin:0; flex:2;" onclick="exportText()" disabled&gt;📋 複製名單&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="result-container"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="height:30px;"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- Toast --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id="toast"&gt;已複製到剪貼簿&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let allPlayers = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const MIN_PER_GROUP = 3;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const MAX_PER_GROUP_STRICT = 4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const MANUAL_MAX_PER_GROUP = 5;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let idCounter = 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let finalGroups = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Demo Data (International Stars) ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadDemoData() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('input-text').value =<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">`1. Tom 湯姆克魯斯 12</span></p>
+<p class="p1"><span class="s1">2. Taylor Swift 泰勒絲 24</span></p>
+<p class="p1"><span class="s1">3. 👑 The Rock 15</span></p>
+<p class="p1"><span class="s1">4. Scarlett 黑寡婦 🕷️ 18</span></p>
+<p class="p1"><span class="s1">5. Tiger Woods 0</span></p>
+<p class="p1"><span class="s1">6. Stephen Curry 🏀 8</span></p>
+<p class="p1"><span class="s1">7. Jennifer L. 珍妮佛 28</span></p>
+<p class="p1"><span class="s1">8. Leonardo 李奧納多 14`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function clearInput() { document.getElementById('input-text').value = ''; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Step 1: Logic ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function processInput() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const raw = document.getElementById('input-text').value.trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (!raw) { showToast("請輸入資料"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const lines = raw.split('\n');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>allPlayers = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>idCounter = 1;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const femaleKeywords = ["Mrs", "Ms", "Miss", "Lady", "女", "姐", "妹"];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const femaleEmojiString = "🩷❤️🧡💛💜💙🩵💚🖤🩶🤍🤎💕💞💓💗❣️💖💘💝💟🧘‍♀️✨⭐️🌟🌹🦄👑👠👗👙🙋‍♀️🙎‍♀️🙆‍♀️💁‍♀️👸🏻👩‍🦰👩🏻👧💋😍";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const femaleEmojis = [...femaleEmojiString];<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const leadingNumbers = /^[\d\.\s\)\-\]]+/;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lines.forEach(line =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let cleanLine = line.trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!cleanLine) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 1. Remove leading ranking numbers (e.g., "1. ")</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cleanLine = cleanLine.replace(leadingNumbers, '').trim();<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 2. Extract HCP (numbers at the end)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let hcp = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const hcpMatch = cleanLine.match(/(\d+(\.\d+)?)$/);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (hcpMatch) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>hcp = parseFloat(hcpMatch[0]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>cleanLine = cleanLine.substring(0, hcpMatch.index).trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 3. Detect Gender (Check before cleaning name)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let isFemale = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Check regex text keywords</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (new RegExp(femaleKeywords.join('|'), 'i').test(cleanLine)) isFemale = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Check emojis</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (femaleEmojis.some(emoji =&gt; cleanLine.includes(emoji))) isFemale = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Auto detect common female names (Simple heuristic for demo)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (/Taylor|Scarlett|Jennifer|Amy|Vikki|Lisa/i.test(cleanLine)) isFemale = true;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 4. Clean Name</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Remove text keywords</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let namePart = cleanLine.replace(new RegExp(femaleKeywords.join('|'), 'gi'), '');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Remove specific gender emojis (but keep other emojis if needed)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>femaleEmojis.forEach(e =&gt; { namePart = namePart.split(e).join(''); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>namePart = namePart.trim();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 5. Robust Reordering: Chinese First</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Extract Chinese characters</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const chineseMatch = namePart.match(/[\u4e00-\u9fa5]+/g);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const chineseStr = chineseMatch ? chineseMatch.join('') : "";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Remove Chinese to get the rest (English, numbers inside name, other symbols)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let engStr = namePart.replace(/[\u4e00-\u9fa5]+/g, '').trim();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Reassemble</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let finalName = "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (chineseStr &amp;&amp; engStr) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>finalName = `${chineseStr} ${engStr}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// If only one part exists</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>finalName = chineseStr || engStr || "Player";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>allPlayers.push({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>id: idCounter++,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>name: finalName,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>hcp: hcp,<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>gender: isFemale ? 'F' : 'M'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>updateCountInfo();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderPlayerList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>goToStep(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Step 2: Edit UI ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateCountInfo() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('player-count-info').innerText = `共 ${allPlayers.length} 人`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderPlayerList() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const listDiv = document.getElementById('player-list');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>listDiv.innerHTML = "";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>allPlayers.forEach(p =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>div.className = `assign-item`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const genderClass = p.gender === 'F' ? 'female' : 'male';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const genderIcon = p.gender === 'F' ? '♀' : '♂';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>div.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:flex; align-items:center; flex:1;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="gender-toggle ${genderClass}" onclick="toggleGender(${p.id})"&gt;${genderIcon}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="text" class="name-edit" value="${p.name}" onchange="updatePlayerName(${p.id}, this.value)"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:flex; align-items:center;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="number" class="hcp-input" value="${p.hcp}" onchange="updatePlayerHcp(${p.id}, this.value)"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-del" onclick="deletePlayer(${p.id})"&gt;×&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>listDiv.appendChild(div);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Edit Actions</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function manualAddPlayer() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nameInput = document.getElementById('new-name');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const hcpInput = document.getElementById('new-hcp');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const name = nameInput.value.trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const hcp = parseFloat(hcpInput.value) || 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (name) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>allPlayers.push({ id: idCounter++, name: name, hcp: hcp, gender: 'M' });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nameInput.value = ''; hcpInput.value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateCountInfo(); renderPlayerList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function deletePlayer(pid) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>allPlayers = allPlayers.filter(p =&gt; p.id !== pid);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>updateCountInfo(); renderPlayerList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updatePlayerName(pid, val) { allPlayers.find(x =&gt; x.id === pid).name = val.trim(); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updatePlayerHcp(pid, val) { allPlayers.find(x =&gt; x.id === pid).hcp = parseFloat(val) || 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function toggleGender(pid) {<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const p = allPlayers.find(x =&gt; x.id === pid);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (p) { p.gender = p.gender === 'M' ? 'F' : 'M'; renderPlayerList(); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Step 3: Algorithm ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function generateResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(allPlayers.length === 0) { showToast("名單為空"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const genderLogic = document.getElementById('gender-logic').value;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const hcpLogic = document.getElementById('hcp-logic').value;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let pool = JSON.parse(JSON.stringify(allPlayers)); // Deep copy</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const totalPeople = pool.length;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const numGroups = Math.ceil(totalPeople / 4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let groups = Array.from({length: numGroups}, () =&gt; []);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Sort Helper</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const sortByHcpDesc = (list) =&gt; list.sort((a,b) =&gt; b.hcp - a.hcp);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const sortByHcpAsc = (list) =&gt; list.sort((a,b) =&gt; a.hcp - b.hcp);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (hcpLogic === 'total_balanced') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// S-Shape (Snake) Distribution</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if(genderLogic === 'balanced') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Separate genders</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let ladies = pool.filter(p=&gt;p.gender==='F');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let men = pool.filter(p=&gt;p.gender==='M');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sortByHcpDesc(ladies);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sortByHcpDesc(men);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Distribute Ladies (Snake)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>ladies.forEach((p, i) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>let pos = i % numGroups;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>let gIdx = (Math.floor(i / numGroups) % 2 === 0) ? pos : (numGroups - 1 - pos);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>groups[gIdx].push(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Distribute Men<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>men.forEach(p =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// Greedy fill: find group with &lt; 4 people and lowest total HCP</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>let eligible = groups.map((g, i) =&gt; ({id: i, count: g.length, total: g.reduce((s,x)=&gt;s+x.hcp,0)}))</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                         </span>.filter(g =&gt; g.count &lt; MAX_PER_GROUP_STRICT);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if(eligible.length === 0) {<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>groups[groups.length-1].push(p); // Overflow</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>eligible.sort((a,b) =&gt; a.total - b.total);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>groups[eligible[0].id].push(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Mixed gender, just sort by HCP</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sortByHcpDesc(pool);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>pool.forEach((p, i) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>let pos = i % numGroups;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>let gIdx = (Math.floor(i / numGroups) % 2 === 0) ? pos : (numGroups - 1 - pos);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>groups[gIdx].push(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Competitive: Group by HCP slices (1-4, 5-8...)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sortByHcpAsc(pool);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>pool.forEach((p, i) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const gIdx = Math.floor(i / 4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if(groups[gIdx]) groups[gIdx].push(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>else groups[groups.length-1].push(p); // Overflow</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalGroups = groups;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderResults();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>goToStep(3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Step 3: Render ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderResults() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const container = document.getElementById('result-container');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const btnExport = document.getElementById('btn-export');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>container.innerHTML = "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let allValid = true;<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalGroups.forEach((g, idx) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if(g.length === 0) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const totalHcp = g.reduce((s,p)=&gt;s+p.hcp,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>g.sort((a,b) =&gt; a.hcp - b.hcp); // Display order: Low to High</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let isValid = (g.length &gt;= MIN_PER_GROUP &amp;&amp; g.length &lt;= MAX_PER_GROUP_STRICT);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!isValid) allValid = false;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let cardClass = isValid ? "scorecard" : "scorecard invalid";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let rows = g.map(p =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const colorClass = p.gender === 'F' ? 'female' : 'male';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Move Options</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let moveOpts = "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>for(let i=0; i&lt;finalGroups.length; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>let selected = (i === idx) ? "selected" : "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>moveOpts += `&lt;option value="${i}" ${selected}&gt;移至 G${i+1}&lt;/option&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="p-name ${colorClass}"&gt;${p.name}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div style="display:flex;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;select class="move-select" onchange="manualMove(${p.id}, ${idx}, this.value)"&gt;${moveOpts}&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td style="text-align:right; font-weight:700; color:#546E7A;"&gt;${p.hcp}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}).join('');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Arrow Controls</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let upBtn = idx &gt; 0 ?<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`&lt;button class="arrow-btn" onclick="swapGroup(${idx}, -1)"&gt;▲&lt;/button&gt;` : `&lt;div style="width:28px;"&gt;&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let downBtn = idx &lt; finalGroups.length - 1 ?<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`&lt;button class="arrow-btn" onclick="swapGroup(${idx}, 1)"&gt;▼&lt;/button&gt;` : `&lt;div style="width:28px;"&gt;&lt;/div&gt;`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>container.innerHTML += `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="${cardClass}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="scorecard-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="group-info"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="group-title"&gt;GROUP ${idx+1}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="group-stats"&gt;HCP ${totalHcp.toFixed(1)}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="order-actions"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>${upBtn} ${downBtn}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;${rows}&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (allValid &amp;&amp; finalGroups.length &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.disabled = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.textContent = "📋 複製文字名單";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.classList.add('btn-green');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.disabled = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.textContent = "⚠️ 請修正人數 (3-4人)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btnExport.classList.remove('btn-green');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- Actions ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function manualMove(pid, fromIdx, toIdx) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>fromIdx = parseInt(fromIdx); toIdx = parseInt(toIdx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(fromIdx === toIdx) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(finalGroups[toIdx].length &gt;= MANUAL_MAX_PER_GROUP) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showToast("該組人數已達上限");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderResults(); // Reset dropdown</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let pIndex = finalGroups[fromIdx].findIndex(p =&gt; p.id === pid);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(pIndex &gt; -1) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let player = finalGroups[fromIdx].splice(pIndex, 1)[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>finalGroups[toIdx].push(player);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderResults();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function swapGroup(index, direction) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let newIndex = index + direction;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(newIndex &lt; 0 || newIndex &gt;= finalGroups.length) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>[finalGroups[index], finalGroups[newIndex]] = [finalGroups[newIndex], finalGroups[index]];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderResults();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function exportText() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let text = "⛳️ 高爾夫分組名單\n==================\n";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalGroups.forEach((g, idx) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if(g.length === 0) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text += `\n[第 ${idx+1} 組] \n`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>g.forEach(p =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text += `- ${p.name} (${p.hcp})\n`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let total = g.reduce((s,p)=&gt;s+p.hcp,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text += `&gt; Total HCP: ${total.toFixed(1)}\n`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>navigator.clipboard.writeText(text).then(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showToast("✅ 名單已複製");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}).catch(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showToast("❌ 複製失敗");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showToast(msg) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const t = document.getElementById("toast");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>t.innerText = msg;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>t.className = "show";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; { t.className = t.className.replace("show", ""); }, 3000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function goToStep(n) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelectorAll('.step').forEach(e=&gt;e.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById(`tab-${n}`).classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>[1,2,3].forEach(i =&gt; document.getElementById(`view-${i}`).classList.add('hidden'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById(`view-${n}`).classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.scrollTo(0,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
